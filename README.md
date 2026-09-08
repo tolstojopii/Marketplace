@@ -16,29 +16,29 @@ MarketPlace - это веб-приложение, которое позволя�
 - использовать адаптивный интерфейс для любых устройств.
 
 Проект состоит из двух частей:
-- **Сервер** (backend) — Node.js + Express + PostgreSQL.
-- **Клиент** (frontend) — React + React Router + Zustand.
+- **Сервер** (backend) - Node.js + Express + PostgreSQL.
+- **Клиент** (frontend) - React + React Router + Zustand.
 
 ---
 
 ##  Стек технологий
 
 ### Backend
-- **Node.js** + **Express** — создание REST API.
-- **PostgreSQL** — база данных.
-- **pg** — драйвер для работы с PostgreSQL.
-- **bcryptjs** — хеширование паролей.
-- **jsonwebtoken** — генерация и проверка JWT.
-- **express-validator** — валидация данных.
-- **cors** — настройка CORS.
-- **dotenv** — управление переменными окружения.
+- **Node.js** + **Express** - создание REST API.
+- **PostgreSQL** - база данных.
+- **pg** - драйвер для работы с PostgreSQL.
+- **bcryptjs** - хеширование паролей.
+- **jsonwebtoken** - генерация и проверка JWT.
+- **express-validator** - валидация данных.
+- **cors** - настройка CORS.
+- **dotenv** - управление переменными окружения.
 
 ### Frontend
-- **React** (v18+) — пользовательский интерфейс.
-- **React Router** — маршрутизация.
-- **Zustand** — управление состоянием (аутентификация).
-- **Axios** — HTTP-запросы к серверу.
-- **CSS Modules** — стилизация компонентов.
+- **React** (v18+) - пользовательский интерфейс.
+- **React Router** - маршрутизация.
+- **Zustand** - управление состоянием (аутентификация).
+- **Axios** - HTTP-запросы к серверу.
+- **CSS Modules** - стилизация компонентов.
 
 ---
 
