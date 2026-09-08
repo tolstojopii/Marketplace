@@ -1,0 +1,11 @@
+#root {
+  width: 100%; 
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+  border: none; 
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}

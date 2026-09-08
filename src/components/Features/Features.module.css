@@ -1,0 +1,52 @@
+.features {
+  padding: 60px 0;
+  background:  #1e1e2a;
+  border-radius: 24px;
+  margin: 20px 0 40px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 0 40px;
+}
+
+.featureItem {
+  text-align: center;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+
+
+.featureIcon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.featureItem h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: white
+}
+
+.featureItem p {
+  color: #8b9299;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}
