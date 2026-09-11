@@ -116,7 +116,7 @@ export function Package() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-className="lucide lucide-package-icon lucide-package"
+      className="lucide lucide-package-icon lucide-package"
     >
       <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
       <path d="M12 22V12" />
@@ -138,7 +138,7 @@ export function Security() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-className="lucide lucide-user-shield-icon lucide-user-shield"
+      className="lucide lucide-user-shield-icon lucide-user-shield"
     >
       <path d="M10 15H6a4 4 0 0 0-4 4v2" />
       <path d="M22 17.5c0 2.499-1.75 3.749-3.83 4.474a.5.5 0 0 1-.335-.005c-2.085-.72-3.835-1.97-3.835-4.47V14a.5.5 0 0 1 .5-.499c1 0 2.25-.6 3.12-1.36a.6.6 0 0 1 .76-.001c.875.765 2.12 1.36 3.12 1.36a.5.5 0 0 1 .5.5z" />
@@ -159,7 +159,7 @@ export function Phone() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-className="lucide lucide-phone-icon lucide-phone"
+      className="lucide lucide-phone-icon lucide-phone"
     >
       <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
     </svg>
@@ -178,7 +178,7 @@ export function Speed() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-  className="lucide lucide-gauge-icon lucide-gauge"
+      className="lucide lucide-gauge-icon lucide-gauge"
     >
       <path d="m12 14 4-4" />
       <path d="M3.34 19a10 10 0 1 1 17.32 0" />
@@ -198,7 +198,7 @@ export function Books() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-    className="lucide lucide-library-big-icon lucide-library-big"
+      className="lucide lucide-library-big-icon lucide-library-big"
     >
       <rect width="8" height="18" x="3" y="3" rx="1" />
       <path d="M7 3v18" />
@@ -219,7 +219,7 @@ export function Clothes() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-className="lucide lucide-shirt-icon lucide-shirt"
+      className="lucide lucide-shirt-icon lucide-shirt"
     >
       <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
     </svg>
@@ -237,7 +237,7 @@ export function House() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-className="lucide lucide-house-icon lucide-house"
+      className="lucide lucide-house-icon lucide-house"
     >
       <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
       <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -256,7 +256,7 @@ export function Electronics() {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-className="lucide lucide-computer-icon lucide-computer"
+      className="lucide lucide-computer-icon lucide-computer"
     >
       <rect width="14" height="8" x="5" y="2" rx="2" />
       <rect width="20" height="8" x="2" y="14" rx="2" />
@@ -288,6 +288,88 @@ export function Sport() {
     </svg>
   );
 }
+
+export function User() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="violet"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-user"
+    >
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+export function Star() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="yellow"
+      stroke="yellow"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-star"
+    >
+      <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+    </svg>
+  );
+}
+
+export function ShoppingBasket() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-shopping-cart"
+    >
+      <path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18" />
+      <path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25" />
+      <circle cx="18" cy="20" r="2" />
+      <circle cx="8" cy="20" r="2" />
+    </svg>
+  );
+}
+
+export function Heart({ stroke, fill, className }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill={fill}
+      stroke={stroke}
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-heart"
+    >
+      <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+    </svg>
+  );
+}
+
 export function Auto() {
   return (
     <svg

@@ -69,9 +69,43 @@
   transform: scale(1.1);
 }
 
+.profileLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #c8c7cc;
+  padding: 6px 12px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.profileLink:hover {
+  background: #2a2a3a;
+  color: #fff;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4361ee, #b265e6);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .cartBadge {
   position: absolute;
-  top: -4px;
+  top: 0px;
   right: -4px;
   background: #e63946;
   color: white;
@@ -96,6 +130,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.cartLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
 }
 
 .logOutBtn{

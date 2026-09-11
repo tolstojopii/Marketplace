@@ -1,10 +1,12 @@
 import styles from "./Header.module.css";
-import { Shop } from "../../assets/image";
-import { useNavigate } from "react-router-dom";
+import { Shop, ShoppingBasket } from "../../assets/image";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../../store/authStore";
+import { useCartTotal } from "../../hooks/useUnifiedCart";
 
-function Header({ cartCount }) {
+function Header() {
   const { user, logout } = useAuthStore();
+  const {count: totalItems} = useCartTotal();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -19,7 +21,11 @@ function Header({ cartCount }) {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
-        <div className={styles.logo} style={{ cursor: "pointer" }}>
+        <div
+          className={styles.logo}
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/")}
+        >
           <Shop />
           <span className={styles.logoText}>MarketPlace</span>
         </div>
@@ -31,16 +37,20 @@ function Header({ cartCount }) {
         </nav>
 
         <div className={styles.headerActions}>
-          <button className={styles.cartBtn}>
-            🛒
-            {cartCount > 0 && (
-              <span className={styles.cartBadge}>{cartCount}</span>
-            )}
-          </button>
+          <Link to="/cart" className={styles.cartLink}>
+            <button className={styles.cartBtn}>
+              <ShoppingBasket />
+              {totalItems > 0 && (
+                <span className={styles.cartBadge}>{totalItems}</span>
+              )}
+            </button>
+          </Link>
 
           {user ? (
             <>
-              <span>Привет, {user.full_name}</span>
+              <Link to="/profile" className={styles.profileLink}>
+                <span className={styles.userName}>{user.full_name}</span>
+              </Link>
               <button className={styles.logOutBtn} onClick={handleLogout}>
                 Выйти
               </button>

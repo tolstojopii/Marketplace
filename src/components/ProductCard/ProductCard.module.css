@@ -1,0 +1,120 @@
+/* ProductCard.module.css */
+.productCard {
+  background: #1e1e2a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.productCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.productImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #12121c;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.favoriteBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.favoriteBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.favoriteBtn.active {
+  background: rgba(245, 139, 148, 0.8);
+}
+
+.productInfo {
+  padding: 16px;
+}
+
+.productName {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #f0f0f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.productMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #8b9299;
+  margin-bottom: 12px;
+}
+
+.productRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.productSeller {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.productFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productPrice {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.addToCart {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.addToCart:hover {
+  background: #3a56d4;
+}
+
+.addToCart:active {
+  transform: scale(0.95);
+}

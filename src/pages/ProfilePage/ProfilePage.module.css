@@ -1,0 +1,573 @@
+.profilePage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d0d14 0%, #1a1a2e 100%);
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+}
+
+/* -------- Сайдбар -------- */
+.sidebar {
+  background: #1e1e2a;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #2a2a3a;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.userCard {
+  text-align: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #2a2a3a;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4361ee, #b265e6);
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  box-shadow: 0 8px 24px rgba(67, 97, 238, 0.4);
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f0f0f5;
+  margin-bottom: 4px;
+}
+
+.userEmail {
+  font-size: 13px;
+  color: #8b9299;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: #adb5bd;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  font-family: inherit;
+}
+
+.menuItem:hover {
+  background: #2a2a3a;
+  color: #f0f0f5;
+}
+
+.menuItemActive {
+  background: rgba(67, 97, 238, 0.15);
+  color: #4361ee;
+  font-weight: 600;
+}
+
+.menuIcon {
+  font-size: 18px;
+}
+
+.logoutBtn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: rgba(230, 57, 70, 0.1);
+  color: #e63946;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.logoutBtn:hover {
+  background: rgba(230, 57, 70, 0.2);
+}
+
+/* -------- Контент -------- */
+.content {
+  background: #1e1e2a;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid #2a2a3a;
+  min-height: 500px;
+}
+
+.section {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f0f0f5;
+  margin-bottom: 6px;
+}
+
+.sectionSubtitle {
+  color: #8b9299;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+/* -------- Инфо-карточки -------- */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.infoCard {
+  background: #12121c;
+  border: 1px solid #2a2a3a;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoLabel {
+  font-size: 13px;
+  color: #8b9299;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoValue {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f0f0f5;
+}
+
+.statusActive {
+  color: #4ade80;
+}
+
+/* -------- Статистика -------- */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.statCard {
+  background: linear-gradient(135deg, #1a1a2e, #12121c);
+  border: 1px solid #2a2a3a;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transition: transform 0.2s;
+}
+
+
+
+
+.statCard:hover {
+  transform: translateY(-4px);
+}
+
+.statIcon {
+  font-size: 32px;
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0f0f5;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #8b9299;
+}
+
+/* -------- Заказы -------- */
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.orderItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #12121c;
+  border: 1px solid #2a2a3a;
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: border-color 0.2s;
+}
+
+.orderItem:hover {
+  border-color: #4361ee;
+}
+
+.orderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.orderId {
+  font-weight: 700;
+  color: #f0f0f5;
+  font-size: 16px;
+}
+
+.orderDate {
+  font-size: 13px;
+  color: #8b9299;
+}
+
+.orderRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.orderTotal {
+  font-weight: 700;
+  color: #f0f0f5;
+  font-size: 16px;
+}
+
+.orderStatus {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.statusGreen {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.statusBlue {
+  background: rgba(67, 97, 238, 0.15);
+  color: #4361ee;
+}
+
+.statusOrange {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+}
+
+/* -------- Пустой блок -------- */
+.emptyBox {
+  padding: 60px 20px;
+  text-align: center;
+  background: #12121c;
+  border: 1px dashed #2a2a3a;
+  border-radius: 14px;
+  color: #8b9299;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  color: #adb5bd;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  padding: 12px 16px;
+  background: #12121c;
+  border: 2px solid #2a2a3a;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4361ee;
+}
+
+.primaryBtn {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+  width: fit-content;
+}
+
+.primaryBtn:hover {
+  background: #3a56d4;
+}
+
+
+.emptyState {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #adb5bd;
+  text-align: center;
+  gap: 16px;
+}
+
+.emptyState h2 {
+  color: #f0f0f5;
+  font-size: 28px;
+}
+/* -------- Бейдж в меню -------- */
+.menuBadge {
+  margin-left: auto;
+  background: #e63946;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+/* -------- Список избранного -------- */
+.favoritesList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.favoriteItem {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  background: #12121c;
+  border: 1px solid #2a2a3a;
+  border-radius: 14px;
+  padding: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.favoriteItem:hover {
+  border-color: #4361ee;
+  transform: translateY(-2px);
+}
+
+.favoriteImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #0d0d14;
+}
+
+.favoriteInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.favoriteName {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f0f0f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favoriteMeta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #8b9299;
+}
+
+.favoritePrice {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4361ee;
+  margin-top: 4px;
+}
+
+.favoriteActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cartAddBtn {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.cartAddBtn:hover {
+  background: #3a56d4;
+}
+
+.cartAddBtn:active {
+  transform: scale(0.96);
+}
+
+.removeFavoriteBtn {
+  background: rgba(230, 57, 70, 0.1);
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  color: #e63946;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.removeFavoriteBtn:hover {
+  background: rgba(230, 57, 70, 0.2);
+}
+
+
+@media (max-width: 768px) {
+  .favoriteItem {
+    grid-template-columns: 80px 1fr;
+    gap: 14px;
+  }
+
+  .favoriteImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .favoriteActions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .orderItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .orderRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+}

@@ -1,4 +1,3 @@
-import MacBookImg from "../../public/productImage/MacBook.jpg";
 import { Auto } from "./Auto";
 import { Books } from "./Books";
 import { Electronics } from "./Electronics";
@@ -17,7 +16,7 @@ export const products = [
     id: 1,
     name: "Apple MacBook Air 15",
     price: 157395,
-    image: MacBookImg,
+    image: "/productImage/MacBook.jpg",
     rating: 4.8,
     seller: "xcom",
     isPopular: true,
@@ -30,6 +29,7 @@ export const products = [
     rating: 4.6,
     seller: "AudioShop",
     isPopular: true,
+    category: "Popular",
   },
   {
     id: 3,
@@ -39,6 +39,7 @@ export const products = [
     rating: 4.9,
     seller: "MobileWorld",
     isPopular: true,
+    category: "Popular",
   },
   {
     id: 4,
@@ -48,6 +49,7 @@ export const products = [
     rating: 4.5,
     seller: "Tsum",
     isPopular: true,
+    category: "Popular",
   },
   {
     id: 5,
@@ -57,6 +59,7 @@ export const products = [
     rating: 4.7,
     seller: "Tsum",
     isPopular: true,
+    category: "Popular",
   },
   {
     id: 6,
@@ -66,6 +69,7 @@ export const products = [
     rating: 4.4,
     seller: "GadgetHub",
     isPopular: true,
+    category: "Popular",
   },
   {
     id: 7,
@@ -75,6 +79,7 @@ export const products = [
     rating: 4.3,
     seller: "FitLife",
     isPopular: true,
+    category: "Popular",
   },
   {
     id: 8,
@@ -84,5 +89,6 @@ export const products = [
     rating: 4.6,
     seller: "FashionLab",
     isPopular: true,
+    category: "Popular",
   },
 ];

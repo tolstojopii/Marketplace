@@ -16,14 +16,16 @@ MarketPlace - это веб-приложение, которое позволя�
 - использовать адаптивный интерфейс для любых устройств.
 
 Проект состоит из двух частей:
+
 - **Сервер** (backend) - Node.js + Express + PostgreSQL.
 - **Клиент** (frontend) - React + React Router + Zustand.
 
 ---
 
-##  Стек технологий
+## Стек технологий
 
 ### Backend
+
 - **Node.js** + **Express** - создание REST API.
 - **PostgreSQL** - база данных.
 - **pg** - драйвер для работы с PostgreSQL.
@@ -34,6 +36,7 @@ MarketPlace - это веб-приложение, которое позволя�
 - **dotenv** - управление переменными окружения.
 
 ### Frontend
+
 - **React** (v18+) - пользовательский интерфейс.
 - **React Router** - маршрутизация.
 - **Zustand** - управление состоянием (аутентификация).
@@ -60,7 +63,7 @@ marketplace/
 │ ├── app.js
 │ ├── server.js
 │ ├── package.json
-│ └── .env 
+│ └── .env
 │
 └── frontend/ # Клиентская часть
 ├── public/
@@ -96,13 +99,11 @@ marketplace/
 │ └── index.css
 ├── index.html
 ├── package.json
-└── vite.config.js 
-
-
+└── vite.config.js
 
 ---
 
-##  Установка и запуск
+## Установка и запуск
 
 ### Клонирование репозитория
 
@@ -118,8 +119,8 @@ cd server
 npm install
 ```
 
-
 ### создать .env в папке server
+
 PORT=5000
 DB_HOST=localhost
 DB_PORT=5432
@@ -131,16 +132,15 @@ JWT_SECRET=your_super_secret_key
 ### Создать бд PostgeSQL и выполнить SQL-скрипт для создания таблицы
 
 CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  full_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+id SERIAL PRIMARY KEY,
+full_name VARCHAR(255) NOT NULL,
+email VARCHAR(255) UNIQUE NOT NULL,
+password VARCHAR(255) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
-
 ### запустить сервер в папке server
+
 ```bash
 cd server
 npm run dev
@@ -154,6 +154,7 @@ npm run dev
 ```
 
 ### Функционал(не конечный)
+
 Категории - при клике на категорию в ProductGrid отображаются только товары этой категории.
 
 Аутентификация - JWT-токен хранится в localStorage, используется в интерсепторах Axios.
@@ -169,7 +170,5 @@ npm run dev
 Toast уведомления
 полноценное управление корзиной(сохранение, удаление и добавление в бд)
 Пагинация
-
-
 
 Автор: Игорь
