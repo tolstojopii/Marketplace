@@ -5,30 +5,35 @@ import {
   useFavoriteToggle,
   useIsFavorite,
 } from "../../hooks/useUnifiedFavorites";
+import useToastStore from "../../store/toastStore";
 
 function ProductCard({ product }) {
   const { name, price, image, rating, seller } = product;
   const isFavorite = useIsFavorite(product);
   const toggleFavorite = useFavoriteToggle();
   const { add } = useCartActions();
+  const toast = useToastStore();
 
-  const handleFavorite = (e) => {
-    e.stopPropagation();
+  const handleFavorite = () => {
     toggleFavorite(product);
+    toast.success(
+      isFavorite ? `Убрано из избранного` : `Добавлено в избранное`
+    );
   };
 
-  const handleAddToCart = (e) => {
-    e.stopPropagation();
+  const handleAddToCart = () => {
     add(product, 1);
+    toast.success(`«${name}» добавлен в корзину`);
   };
 
   return (
     <div className={styles.productCard}>
       <div className={styles.productImage}>
-        <img src={image} alt={name} className={styles.image} />
+        <img src={image} alt={name} className={styles.image} loading="lazy" />
         <button
           className={`${styles.favoriteBtn} ${isFavorite ? styles.active : ""}`}
           onClick={handleFavorite}
+          aria-label={isFavorite ? "Убрать из избранного" : "Добавить в избранное"}
         >
           <Heart
             fill={isFavorite ? "red" : "none"}
@@ -37,7 +42,7 @@ function ProductCard({ product }) {
         </button>
       </div>
       <div className={styles.productInfo}>
-        <h3 className={styles.productName}>{name}</h3>
+        <h3 className={styles.productName} title={name}>{name}</h3>
         <div className={styles.productMeta}>
           <span className={styles.productRating}>
             <Star /> {rating}

@@ -3,12 +3,14 @@ const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const favoriteRoutes = require("./routes/favoriteRoutes");
 const cartRoutes = require("./routes/cartRoutes");
+const productRoutes = require('./routes/productRoutes')
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 app.use("/api", (req, res, next) => {
   res.set(
@@ -31,6 +33,7 @@ app.set("etag", false);
 app.use("/api/auth", authRoutes);
 app.use("/api/favorites", favoriteRoutes);
 app.use("/api/cart", cartRoutes);
+app.use('/api/products', productRoutes);
 
 app.get("/", (req, res) => {
   res.json({
@@ -54,5 +57,6 @@ app.use((err, req, res, next) => {
     message: "Внутренняя ошибка сервера",
   });
 });
+
 
 module.exports = app;

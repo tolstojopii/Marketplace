@@ -1,15 +1,16 @@
-/* ProductCard.module.css */
 .productCard {
   background: #1e1e2a;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .productCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .productImage {
@@ -25,42 +26,52 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover .image {
+  transform: scale(1.05);
 }
 
 .favoriteBtn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.5);
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.55);
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
-  color: white;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
+  color: white;
+  backdrop-filter: blur(4px);
 }
 
 .favoriteBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.75);
+  transform: scale(1.1);
 }
 
 .favoriteBtn.active {
-  background: rgba(245, 139, 148, 0.8);
+  background: rgba(245, 139, 148, 0.85);
 }
 
 .productInfo {
-  padding: 16px;
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
 }
 
 .productName {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  margin: 0 0 6px 0;
+  margin: 0;
   color: #f0f0f5;
   white-space: nowrap;
   overflow: hidden;
@@ -70,45 +81,49 @@
 .productMeta {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 11px;
   color: #8b9299;
-  margin-bottom: 12px;
 }
 
-.productRating {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
+.productRating,
 .productSeller {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
+}
+
+.productRating svg,
+.productSeller svg {
+  width: 12px;
+  height: 12px;
 }
 
 .productFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
+  margin-top: auto;
 }
 
 .productPrice {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .addToCart {
   background: #4361ee;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
 }
 
 .addToCart:hover {
@@ -117,4 +132,17 @@
 
 .addToCart:active {
   transform: scale(0.95);
+}
+
+@media (max-width: 640px) {
+  .productName {
+    font-size: 13px;
+  }
+  .productPrice {
+    font-size: 14px;
+  }
+  .addToCart {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
 }

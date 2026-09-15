@@ -1,0 +1,750 @@
+{
+  "categories": [
+    {
+      "name": "Электроника",
+      "slug": "electronics"
+    },
+    {
+      "name": "Одежда",
+      "slug": "clothes"
+    },
+    {
+      "name": "Дом и сад",
+      "slug": "house"
+    },
+    {
+      "name": "Книги",
+      "slug": "books"
+    },
+    {
+      "name": "Спорт",
+      "slug": "sport"
+    },
+    {
+      "name": "Авто",
+      "slug": "auto"
+    }
+  ],
+  "products": [
+    {
+      "name": "Iphone",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "MacBook",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Samsung",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Lenovo",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Микроволновка",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Плита",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Умная колонка",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Аэро-гриль",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Наушники",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Клавиатура",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Мышь",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Монитор",
+      "price": 99999,
+      "image": "/productImage/Electronics.png",
+      "rating": 5,
+      "seller": "ElectronicsDille",
+      "category": "Электроника",
+      "isPopular": false
+    },
+    {
+      "name": "Штаны",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Лонг",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Свитшот",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Худи",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Платье",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Топик",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Ботинки",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Кроссовки",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Носки",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Трусы",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Шорты",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Футболка",
+      "price": 99999,
+      "image": "/productImage/Cloath.png",
+      "rating": 5,
+      "seller": "ClothesDiller",
+      "category": "Одежда",
+      "isPopular": false
+    },
+    {
+      "name": "Гномы",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Плитка",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Красный кирпич",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Песок",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Щебень",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Фонтан",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Цемент",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Гравий",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Черепица",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Лопата",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Вилы",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Тяпка",
+      "price": 99999,
+      "image": "/productImage/House.png",
+      "rating": 5,
+      "seller": "HouseDille",
+      "category": "Дом и сад",
+      "isPopular": false
+    },
+    {
+      "name": "Оно",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Путешествия Гулливера",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Ромео и Джульетта",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Этюд в багровых тонах",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Шерлок Холм",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Властелин колец",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Маленький принц",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Евегений Онегин",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Мертвые души",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Война и Мир",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Колобок",
+      "price": 99999,
+      "image": "/productImage/Books.png",
+      "rating": 5,
+      "seller": "BooksDiller",
+      "category": "Книги",
+      "isPopular": false
+    },
+    {
+      "name": "Брусья",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Турник",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Кимоно",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Волейбольный мяч",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Футбольный мяч",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Баскетбольный мяч",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Каппа",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Бинты",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Перчатки",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Ракетка",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Мяч",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Кроссовки",
+      "price": 99999,
+      "image": "/productImage/ball.png",
+      "rating": 5,
+      "seller": "SportDille",
+      "category": "Спорт",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Toyota",
+      "price": 99999,
+      "image": "/productImage/Auto.png",
+      "rating": 5,
+      "seller": "AutoDiller",
+      "category": "Авто",
+      "isPopular": false
+    },
+    {
+      "name": "Apple MacBook Air 15",
+      "price": 157395,
+      "image": "/productImage/MacBook.jpg",
+      "rating": 4.8,
+      "seller": "xcom",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Наушники AirPods 4",
+      "price": 12990,
+      "image": "/productImage/airpods4.jpg",
+      "rating": 4.6,
+      "seller": "AudioShop",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Iphone 18 Pro",
+      "price": 145349,
+      "image": "/productImage/Iphone.jpg",
+      "rating": 4.9,
+      "seller": "MobileWorld",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Valentino",
+      "price": 15989,
+      "image": "/productImage/Valentino.jpg",
+      "rating": 4.5,
+      "seller": "Tsum",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "MaisonMargiela\"",
+      "price": 13399,
+      "image": "/productImage/Maison Margiela.jpg",
+      "rating": 4.7,
+      "seller": "Tsum",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Comma",
+      "price": 12490,
+      "image": "/productImage/Comma.jpg",
+      "rating": 4.4,
+      "seller": "GadgetHub",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Givanchy",
+      "price": 12990,
+      "image": "/productImage/Givanchy.jpg",
+      "rating": 4.3,
+      "seller": "FitLife",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Le Bouqeut De Mariee",
+      "price": 57959,
+      "image": "/productImage/LeBouquet.jpg",
+      "rating": 4.6,
+      "seller": "FashionLab",
+      "category": "Популярное",
+      "isPopular": true
+    }
+  ]
+}

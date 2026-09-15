@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs')
 const jwt = require("jsonwebtoken");
 const { validateRegistration, validateLogin } = require("../utils/validators");
 
-
 const SALT_ROUNDS = 12
 
 const generateToken = (userId) => {

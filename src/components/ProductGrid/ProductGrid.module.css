@@ -1,4 +1,3 @@
-/* ProductGrid.module.css */
 .productsSection {
   padding: 60px 0;
 }
@@ -7,7 +6,7 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #ffff;
+  color: #fff;
 }
 
 .sectionSubtitle {
@@ -18,22 +17,31 @@
 
 .productsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .productsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .productsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .productsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
   .productsGrid {
     grid-template-columns: 1fr;
-  }
-
-  .sectionTitle {
-    font-size: 26px;
   }
 }

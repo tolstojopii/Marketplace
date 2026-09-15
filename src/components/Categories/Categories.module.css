@@ -1,5 +1,9 @@
-.categories {
-  padding: 60px 0;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 40px;
 }
 
 .sectionTitle {
@@ -12,7 +16,30 @@
 .sectionSubtitle {
   color: #6c757d;
   font-size: 18px;
-  margin-bottom: 40px;
+  margin: 0;
+}
+
+.resetBtn {
+  background: rgba(67, 97, 238, 0.15);
+  color: #4361ee;
+  border: 1px solid rgba(67, 97, 238, 0.4);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.resetBtn:hover {
+  background: rgba(67, 97, 238, 0.25);
+  transform: translateY(-1px);
+}
+
+.categories {
+  padding: 60px 0;
 }
 
 .categoriesGrid {
@@ -27,11 +54,19 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
+  user-select: none;
 }
 
 .categoryCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.categoryCardActive {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+  transform: translateY(-4px);
 }
 
 .categoryIcon {
@@ -50,13 +85,16 @@
   .categoriesGrid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
   .categoriesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .sectionTitle {
     font-size: 26px;
   }

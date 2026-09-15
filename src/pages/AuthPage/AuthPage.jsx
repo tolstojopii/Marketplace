@@ -2,6 +2,7 @@ import styles from "./AuthPage.module.css";
 import { useState } from "react";
 import useAuthStore from "../../store/authStore";
 import { useNavigate } from "react-router-dom";
+import useToastStore from "../../store/toastStore";
 
 function AuthPage() {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const toast = useToastStore();
 
   const login = useAuthStore((state) => state.login);
 
@@ -51,7 +53,9 @@ function AuthPage() {
         }
       }
     } catch (err) {
-      setError(err.message || "что то пошло не так");
+      const msg = err.message || err.errors?.join(', ') || "Что-то пошло не так"
+      setError(msg);
+      toast.error(msg);
     } finally {
       setLoading(false);
     }
