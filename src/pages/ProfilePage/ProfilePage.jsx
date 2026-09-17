@@ -236,12 +236,12 @@ function ProfilePage() {
                           <span>
                             <User /> {item.seller}
                           </span>
+                          
                         </div>
                         <div className={styles.favoritePrice}>
                           {item.price.toLocaleString()} ₽
                         </div>
-                      </div>
-                      <div className={styles.favoriteActions}>
+                        <div className={styles.favoriteActions}>
                         <button
                           className={styles.cartAddBtn}
                           onClick={() => addToCart(item, 1)}
@@ -256,6 +256,22 @@ function ProfilePage() {
                           ✕
                         </button>
                       </div>
+                      </div>
+                      {/* <div className={styles.favoriteActions}>
+                        <button
+                          className={styles.cartAddBtn}
+                          onClick={() => addToCart(item, 1)}
+                        >
+                          В корзину
+                        </button>
+                        <button
+                          className={styles.removeFavoriteBtn}
+                          onClick={() => toggleFavorite(item)}
+                          aria-label="Убрать из избранного"
+                        >
+                          ✕
+                        </button>
+                      </div> */}
                     </div>
                   ))}
                 </div>

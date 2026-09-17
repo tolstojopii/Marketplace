@@ -56,7 +56,7 @@
 .quantityControl {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .qtyBtn {
@@ -183,7 +183,6 @@
 
 @media (max-width: 768px) {
   .cartItem {
-    flex-wrap: wrap;
     gap: 12px;
   }
   .itemImage {

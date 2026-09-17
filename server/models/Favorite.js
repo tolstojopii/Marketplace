@@ -3,7 +3,11 @@ const db = require("../config/database");
 class Favorite {
   static async getAllByUser(userId) {
     const { rows } = await db.query(
-      "SELECT product_key, product_data, created_at FROM favorites WHERE user_id = $1 ORDER BY created_at DESC",
+      `SELECT 
+      product_key,
+       product_data,
+        created_at
+         FROM favorites WHERE user_id = $1 ORDER BY created_at DESC`,
       [userId],
     );
     return rows;

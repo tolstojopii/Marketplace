@@ -1,10 +1,13 @@
-import useAuthStore from '../store/authStore';
-import useCartStore from '../store/cartStore';
+import useAuthStore from "../store/authStore";
+import useCartStore from "../store/cartStore";
 import {
-  useCartQuery, useAddToCart, useUpdateCartQuantity,
-  useRemoveFromCart, useClearCart,
-} from './useCart';
-import { getProductKey } from '../utils/productKey';
+  useCartQuery,
+  useAddToCart,
+  useUpdateCartQuantity,
+  useRemoveFromCart,
+  useClearCart,
+} from "./useCart";
+import { getProductKey } from "../utils/productKey";
 
 export const useCartItems = () => {
   const user = useAuthStore((s) => s.user);
@@ -18,7 +21,10 @@ export const useCartItems = () => {
       quantity: i.quantity,
     }));
   }
-  return localItems.map((i) => ({ ...i, product_key: getProductKey(i) }));
+  return localItems.map((i) => ({
+    ...i,
+    product_key: getProductKey(i),
+  }));
 };
 
 export const useCartActions = () => {
@@ -48,22 +54,26 @@ export const useCartActions = () => {
     add: (product, qty = 1) => {
       for (let i = 0; i < qty; i++) addLocal(product);
     },
+
     setQuantity: (productKey, quantity) => {
-      const item = useCartStore.getState().items.find(
-        (i) => getProductKey(i) === productKey
-      );
+      const item = useCartStore
+        .getState()
+        .items.find((i) => getProductKey(i) === productKey);
       if (!item) return;
-      if (quantity <= 0) return removeLocal(item.id);
+
+      if (quantity <= 0) {
+        removeLocal(productKey);
+        return;
+      }
       const diff = quantity - item.quantity;
-      if (diff > 0) for (let i = 0; i < diff; i++) incLocal(item.id);
-      else for (let i = 0; i < -diff; i++) decLocal(item.id);
+      if (diff > 0) {
+        for (let i = 0; i < diff; i++) incLocal(productKey);
+      } else {
+        for (let i = 0; i < -diff; i++) decLocal(productKey);
+      }
     },
-    remove: (productKey) => {
-      const item = useCartStore.getState().items.find(
-        (i) => getProductKey(i) === productKey
-      );
-      if (item) removeLocal(item.id);
-    },
+
+    remove: (productKey) => removeLocal(productKey),
     clear: clearLocal,
   };
 };

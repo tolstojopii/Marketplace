@@ -58,17 +58,19 @@ function CartPage() {
             <div className={styles.quantityControl}>
               <button
                 onClick={() => setQuantity(item.product_key, item.quantity - 1)}
+                className={styles.qtyBtn}
               >
                 −
               </button>
               <span>{item.quantity}</span>
               <button
                 onClick={() => setQuantity(item.product_key, item.quantity + 1)}
+                className={styles.qtyBtn}
               >
                 +
               </button>
             </div>
-            <button onClick={() => remove(item.product_key)}>✕</button>
+            <button onClick={() => remove(item.product_key) } className={styles.qtyBtn}>✕</button>
           </div>
         ))}
       </div>

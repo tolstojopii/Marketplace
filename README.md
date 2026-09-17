@@ -6,14 +6,20 @@
 
 ## О проекте
 
-MarketPlace - это веб-приложение, которое позволяет пользователям:
+Full-stack маркетплейс с корзиной, избранным, авторизацией и каталогом товаров по категориям. Работает как для авторизованных пользователей (данные хранятся на сервере), так и для гостей (данные в localStorage).
 
-- просматривать каталог товаров (электроника, одежда, книги, спорт, авто, дом и сад);
-- фильтровать товары по категориям;
-- добавлять товары в корзину (в реальном времени обновляется счётчик);
-- регистрироваться и входить в аккаунт с использованием JWT;
-- получать данные о текущем пользователе;
-- использовать адаптивный интерфейс для любых устройств.
+### Возможности
+**Авторизация и регистрация** - JWT-токен, bcrypt-хеширование пароля
+
+**Каталог товаров** фильтрация по категориям, поиск, «популярные»
+
+**Корзина** - работает и для гостей (localStorage), и для авторизованных (БД), с оптимистичными обновлениями
+
+**Избранное** - то же самое: unified-логика для гостей и пользователей
+
+**Личный кабинет** -профиль, заказы (заглушка), избранное, настройки
+
+**Тосты** - глобальные уведомления через Zustand
 
 Проект состоит из двух частей:
 
@@ -39,70 +45,12 @@ MarketPlace - это веб-приложение, которое позволя�
 
 - **React** (v18+) - пользовательский интерфейс.
 - **React Router** - маршрутизация.
+- **React query** - серверное состояние, кещ, мутации
 - **Zustand** - управление состоянием (аутентификация).
 - **Axios** - HTTP-запросы к серверу.
 - **CSS Modules** - стилизация компонентов.
 
 ---
-
-## Структура проекта
-
-marketplace/
-├── server/ # Серверная часть
-│ ├── config/
-│ │ └── database.js # Подключение к PostgreSQL
-│ ├── controllers/
-│ │ └── authController.js
-│ ├── middleware/
-│ │ ├── authMiddleware.js
-│ │ └── validators.js
-│ ├── models/
-│ │ └── User.js
-│ ├── routes/
-│ │ └── authRoutes.js
-│ ├── app.js
-│ ├── server.js
-│ ├── package.json
-│ └── .env
-│
-└── frontend/ # Клиентская часть
-├── public/
-│ └── productImage/ # изображения товаров
-├── src/
-│ ├── api/
-│ │ └── auth.js
-│ ├── assets/
-│ │ └── image.jsx # SVG-иконки
-│ ├── components/
-│ │ ├── Header/
-│ │ ├── Hero/
-│ │ ├── Categories/
-│ │ ├── ProductGrid/
-│ │ ├── Features/
-│ │ └── Footer/
-│ ├── data/
-│ │ ├── products.js
-│ │ ├── Auto.js
-│ │ ├── Books.js
-│ │ ├── Clothes.js
-│ │ ├── Electronics.js
-│ │ ├── House.js
-│ │ └── Sport.js
-│ ├── pages/
-│ │ ├── HomePage/
-│ │ └── AuthPage/
-│ ├── store/
-│ │ └── authStore.jsx
-│ ├── App.jsx
-│ ├── App.css
-│ ├── main.jsx
-│ └── index.css
-├── index.html
-├── package.json
-└── vite.config.js
-
----
-
 ## Установка и запуск
 
 ### Клонирование репозитория
@@ -131,13 +79,19 @@ JWT_SECRET=your_super_secret_key
 
 ### Создать бд PostgeSQL и выполнить SQL-скрипт для создания таблицы
 
-CREATE TABLE users (
-id SERIAL PRIMARY KEY,
-full_name VARCHAR(255) NOT NULL,
-email VARCHAR(255) UNIQUE NOT NULL,
-password VARCHAR(255) NOT NULL,
-created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+**users**	- Пользователи (full_name, email, password)
+**categories** -	Категории товаров (name, slug)
+**products** - Товары (name, price, image, rating, seller, category_id, is_popular)
+**cart_items** -	Корзина: (user_id, product_key) UNIQUE, product_data jsonb, quantity
+**favorites**	- Избранное: (user_id, product_key) UNIQUE, product_data jsonb
+
+
+### полезные команды
+npm run migrate:up       *Применить миграции*
+npm run migrate:down     *Откатить последнюю миграцию*
+npm run migrate:create   *Создать новую миграцию*
+npm run seed             *Загрузить товары из seeds/products.json*
+
 
 ### запустить сервер в папке server
 
@@ -163,12 +117,10 @@ npm run dev
 
 ### Будущие улучшения
 
-- Использование TypeScript(типизации)
+- Интеграция TypeScript
 - Админ-панель для управления товарами и пользователями
 - Фильтрация и сортировка товаров
 - Добавление логирования
-- Toast уведомления
-- полноценное управление корзиной(сохранение, удаление и добавление в бд)
 - Пагинация
 
 Автор: Игорь

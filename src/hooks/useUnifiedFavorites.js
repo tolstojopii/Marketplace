@@ -29,7 +29,6 @@ export const useFavoriteToggle = () => {
       localToggle(product);
       return;
     }
-    // читаем кеш ДО вызова mutate — тогда onMutate не сломает логику
     const key = ['favorites', user.id];
     const current = qc.getQueryData(key) || [];
     const productKey = getProductKey(product);

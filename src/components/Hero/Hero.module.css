@@ -116,7 +116,7 @@
 
 .heroCard {
   background: #1e1e2a;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   padding: 24px;
   border-radius: 16px;
   transition: all 0.3s ease;
@@ -124,7 +124,7 @@
 
 .heroCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
 .cardEmoji {
@@ -157,11 +157,11 @@
     gap: 40px;
     padding: 0 20px;
   }
-  
+
   .heroText h1 {
     font-size: 36px;
   }
-  
+
   .heroStats {
     gap: 32px;
   }
@@ -171,32 +171,32 @@
   .hero {
     padding: 40px 0;
   }
-  
+
   .heroText h1 {
     font-size: 28px;
   }
-  
+
   .heroActions {
     flex-direction: column;
   }
-  
+
   .heroActions button {
     width: 100%;
   }
-  
+
   .heroStats {
     flex-wrap: wrap;
     gap: 16px;
   }
-  
+
   .heroImage {
     grid-template-columns: 1fr;
   }
-  
+
   .card2 {
     margin-top: 0;
   }
-  
+
   .card3 {
     grid-column: span 1;
   }

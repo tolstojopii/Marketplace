@@ -23,15 +23,18 @@ class CartItem {
   }
 
   static async setQuantity(userId, productKey, quantity) {
-    if (quantity <= 0) return this.remove(userId, productKey);
-    const { rows } = await db.query(
-      `UPDATE cart_items SET quantity = $3, updated_at = NOW()
-       WHERE user_id = $1 AND product_key = $2
-       RETURNING product_key, product_data, quantity`,
-      [userId, productKey, quantity]
-    );
-    return rows[0];
+  if (quantity <= 0) {
+    await this.remove(userId, productKey);
+    return null;
   }
+  const { rows } = await db.query(
+    `UPDATE cart_items SET quantity = $3, updated_at = NOW()
+     WHERE user_id = $1 AND product_key = $2
+     RETURNING product_key, product_data, quantity`,
+    [userId, productKey, quantity]
+  );
+  return rows[0] || null;
+}
 
   static async remove(userId, productKey) {
     await db.query(

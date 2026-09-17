@@ -1,5 +1,6 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { getProductKey } from "../utils/productKey";
 
 const useCartStore = create(
   persist(
@@ -7,14 +8,14 @@ const useCartStore = create(
       items: [],
 
       addToCart: (product) => {
+        const key = getProductKey(product);
         const items = get().items;
-        const existing = items.find((item) => item.id === product.id);
+        const existing = items.find((i) => getProductKey(i) === key);
+
         if (existing) {
           set({
-            items: items.map((item) =>
-              item.id === product.id
-                ? { ...item, quantity: item.quantity + 1 }
-                : item
+            items: items.map((i) =>
+              getProductKey(i) === key ? { ...i, quantity: i.quantity + 1 } : i,
             ),
           });
         } else {
@@ -22,30 +23,34 @@ const useCartStore = create(
         }
       },
 
-      removeFromCart: (productId) => {
-        set({ items: get().items.filter((item) => item.id !== productId) });
+      removeFromCart: (productKey) => {
+        set({
+          items: get().items.filter((i) => getProductKey(i) === productKey),
+        });
       },
 
       incrementQuantity: (productId) => {
         set({
-          items: get().items.map((item) =>
-            item.id === productId
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
+          items: get().items.map((i) =>
+            i.id === productId
+              ? { ...i, quantity: i.quantity + 1 }
+              : i,
           ),
         });
       },
 
-      decrementQuantity: (productId) => {
-        const item = get().items.find((item) => item.id === productId);
+      decrementQuantity: (productKey) => {
+        const item = get().items.find((i) => getProductKey(i) === productKey);
+        if(!item) return;
+
         if (item.quantity === 1) {
-          get().removeFromCart(productId);
+          get().removeFromCart(productKey);
         } else {
           set({
-            items: get().items.map((item) =>
-              item.id === productId
-                ? { ...item, quantity: item.quantity - 1 }
-                : item
+            items: get().items.map((i) =>
+              getProductKey(i) === productKey
+                ? { ...i, quantity: i.quantity - 1 }
+                : i,
             ),
           });
         }
@@ -58,13 +63,16 @@ const useCartStore = create(
       },
 
       getTotalPrice: () => {
-        return get().items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        return get().items.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0,
+        );
       },
     }),
     {
-      name: 'cart-storage', // ключ в localStorage
-    }
-  )
+      name: "cart-storage", // ключ в localStorage
+    },
+  ),
 );
 
 export default useCartStore;
