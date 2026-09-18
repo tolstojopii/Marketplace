@@ -13,27 +13,26 @@ const useFavoritesStore = create(
 
         const exists = items.some((i) => getProductKey(i) === key);
         if (exists) {
-          set({ items: items.filter((i) => getProductKey(i) === key) });
+          set({ items: items.filter((i) => getProductKey(i) !== key) });
         } else {
           set({ items: [...items, product] });
         }
       },
 
-      isFavorite: (productKey) => {
-        return get().items.some((i) => getProductKey(i) === productKey);
-      },
+      isFavorite: (productKey) =>
+        get().items.some((i) => getProductKey(i) === productKey),
 
       removeFavorite: (productKey) => {
-        set({ items: get().items.filter((i) => getProductKey(i) === productKey) });
+        set({
+          items: get().items.filter((i) => getProductKey(i) !== productKey),
+        });
       },
 
       clearFavorites: () => set({ items: [] }),
 
       getCount: () => get().items.length,
     }),
-    {
-      name: "favorites-storage",
-    },
+    { name: "favorites-storage" },
   ),
 );
 

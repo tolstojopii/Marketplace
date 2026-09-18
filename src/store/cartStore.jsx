@@ -25,14 +25,14 @@ const useCartStore = create(
 
       removeFromCart: (productKey) => {
         set({
-          items: get().items.filter((i) => getProductKey(i) === productKey),
+          items: get().items.filter((i) => getProductKey(i) !== productKey),
         });
       },
 
-      incrementQuantity: (productId) => {
+      incrementQuantity: (productKey) => {
         set({
           items: get().items.map((i) =>
-            i.id === productId
+            getProductKey(i) === productKey
               ? { ...i, quantity: i.quantity + 1 }
               : i,
           ),
@@ -41,7 +41,7 @@ const useCartStore = create(
 
       decrementQuantity: (productKey) => {
         const item = get().items.find((i) => getProductKey(i) === productKey);
-        if(!item) return;
+        if (!item) return;
 
         if (item.quantity === 1) {
           get().removeFromCart(productKey);
@@ -58,20 +58,13 @@ const useCartStore = create(
 
       clearCart: () => set({ items: [] }),
 
-      getTotalItems: () => {
-        return get().items.reduce((sum, item) => sum + item.quantity, 0);
-      },
+      getTotalItems: () =>
+        get().items.reduce((sum, item) => sum + item.quantity, 0),
 
-      getTotalPrice: () => {
-        return get().items.reduce(
-          (sum, item) => sum + item.price * item.quantity,
-          0,
-        );
-      },
+      getTotalPrice: () =>
+        get().items.reduce((sum, item) => sum + item.price * item.quantity, 0),
     }),
-    {
-      name: "cart-storage", // ключ в localStorage
-    },
+    { name: "cart-storage" },
   ),
 );
 

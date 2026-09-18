@@ -22,7 +22,12 @@ exports.getProducts = async (req, res) => {
 
 exports.getProductById = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const id = parseInt(req.params.id, 10);
+    if (!Number.isInteger(id) || id < 1) {
+      return res.status(400).json({ success: false, message: 'Некорректный id' });
+    }
+
+    const product = await Product.findById(id);
     if (!product) {
       return res.status(404).json({ success: false, message: 'Товар не найден' });
     }
