@@ -1,53 +1,85 @@
-const request = require('supertest');
-const app = require('../app');
+require("dotenv").config({ path: ".env.test" });
 
-describe('Auth API', () => {
-  const testUser = {
-    full_name: 'Test User',
-    email: 'test@example.com',
-    password: 'password123',
-  };
+const request = require("supertest");
+const app = require("../app");
+const db = require("../config/database");
 
-  beforeAll(async () => {
+describe("Auth API", () => {
+  beforeEach(async () => {
+    await db.query("TRUNCATE users RESTART IDENTITY CASCADE");
   });
 
-  it('должен регистрировать нового пользователя', async () => {
+  afterAll(async () => {
+    await db.pool.end();
+  });
+
+  it("регистрирует нового пользователя", async () => {
     const res = await request(app)
-      .post('/api/auth/register')
-      .send(testUser)
+      .post("/api/auth/register")
+      .send({ full_name: "Test", email: "a@test.com", password: "123456" })
       .expect(201);
 
     expect(res.body.success).toBe(true);
-    expect(res.body.data).toHaveProperty('token');
-    expect(res.body.data.user.email).toBe(testUser.email);
+    expect(res.body.data.token).toBeDefined();
+    expect(res.body.data.user.email).toBe("a@test.com");
   });
 
-  it('должен возвращать ошибку при регистрации с существующим email', async () => {
-    await request(app).post('/api/auth/register').send(testUser); // Создаём пользователя
+  it("409 при регистрации на занятый email", async () => {
+    const user = {
+      full_name: "Test",
+      email: "dup@test.com",
+      password: "123456",
+    };
+    await request(app)
+    .post("/api/auth/register")
+    .send(user)
+    .expect(201);
 
-    const res = await request(app)
-      .post('/api/auth/register')
-      .send(testUser)
-      .expect(409);
+    const res=await request(app)
+    .post("/api/auth/register")
+    .send(user);
 
-    expect(res.body.success).toBe(false);
-    expect(res.body.message).toContain('существует');
+    expect(res.status).toBe(409)
+    expect(res.body.success).toBe(false)
+    expect(res.body.message).toMatch(/существует/i);
   });
 
-  it('должен логинить пользователя с правильными данными', async () => {
+  it("логинит с правильным паролем", async () => {
+    const user = { full_name: "Test", email: "c@test.com", password: "123456" };
+    await request(app).post("/api/auth/register").send(user);
+
     const res = await request(app)
-      .post('/api/auth/login')
-      .send({ email: testUser.email, password: testUser.password })
+      .post("/api/auth/login")
+      .send({ email: user.email, password: user.password })
       .expect(200);
 
-    expect(res.body.success).toBe(true);
-    expect(res.body.data).toHaveProperty('token');
+    expect(res.body.data.token).toBeDefined();
   });
 
-  it('должен возвращать 401 при неверном пароле', async () => {
+  it("401 при неверном пароле", async () => {
+    const user = { full_name: "Test", email: "d@test.com", password: "123456" };
+    await request(app).post("/api/auth/register").send(user);
+
     await request(app)
-      .post('/api/auth/login')
-      .send({ email: testUser.email, password: 'wrongpassword' })
+      .post("/api/auth/login")
+      .send({ email: user.email, password: "wrong" })
       .expect(401);
+  });
+
+  it("401 без токена на /me", async () => {
+    await request(app).get("/api/auth/me").expect(401);
+  });
+
+  it("возвращает данные по валидному токену", async () => {
+    const reg = await request(app)
+      .post("/api/auth/register")
+      .send({ full_name: "Test", email: "e@test.com", password: "123456" });
+
+    const res = await request(app)
+      .get("/api/auth/me")
+      .set("Authorization", `Bearer ${reg.body.data.token}`)
+      .expect(200);
+
+    expect(res.body.data.user.email).toBe("e@test.com");
   });
 });
