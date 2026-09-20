@@ -1,7 +1,7 @@
 const db = require('../config/database');
 
 class Product {
-  static async findAll({ category, popular, search, sort, limit = 20, offset = 0 }) {
+ static async findAll({ category, popular, search, sort, limit = 20, offset = 0 }) {
   const where = [];
   const params = [];
   let i = 1;
@@ -17,7 +17,6 @@ class Product {
     where.push(`p.name ILIKE $${i++}`);
     params.push(`%${search}%`);
   }
-
 
   const SORTS = {
     price_asc:   'p.price ASC',
@@ -35,7 +34,8 @@ class Product {
   const { rows } = await db.query(
     `SELECT p.id, p.name, p.price, p.image, p.rating, p.seller,
             p.is_popular AS "isPopular",
-            c.name AS category
+            c.name AS category,
+            COUNT(*) OVER() AS total_count
      FROM products p
      LEFT JOIN categories c ON c.id = p.category_id
      ${whereSQL}
@@ -43,7 +43,11 @@ class Product {
      LIMIT $${i++} OFFSET $${i++}`,
     params
   );
-  return rows;
+
+  const total = rows[0]?.total_count ? Number(rows[0].total_count) : 0;
+  const products = rows.map(({ total_count, ...rest }) => rest);
+
+  return { products, total };
 }
 
   static async findById(id) {

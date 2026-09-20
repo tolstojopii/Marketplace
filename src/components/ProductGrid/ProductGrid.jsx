@@ -1,34 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import ProductCard from "../ProductCard/ProductCard";
 import ProductCardSkeleton from "../ProductCard/ProductCardSkeleton";
 import ProductToolbar from "../ProductToolbar/ProductToolbar";
+import Pagination from "../Pagination/Pagination";
 import styles from "./ProductGrid.module.css";
+
+const PAGE_SIZE = 5;
 
 function ProductsGrid({ categorie }) {
   const [sort, setSort] = useState("default");
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    setPage(1);
+  }, [categorie, sort]);
 
   const filters = {
+    page,
+    limit: PAGE_SIZE,
     ...(categorie ? { category: categorie } : { popular: true }),
     ...(sort !== "default" ? { sort } : {}),
   };
 
-  const { data: products = [], isLoading, isError, refetch } = useProducts(filters);
+  const { data, isLoading, isError, refetch, isFetching } =
+    useProducts(filters);
+  const products = data?.products ?? [];
+  const pagination = data?.pagination;
 
+  console.log("pagination", pagination);
   return (
     <section className={styles.productsSection} id="products">
       <h2 className={styles.sectionTitle}>
-        {categorie || 'Популярные товары'}
+        {categorie || "Популярные товары"}
       </h2>
       <p className={styles.sectionSubtitle}>
-        {categorie ? 'Товары в категории' : 'То, что выбирают чаще всего'}
+        {categorie ? "Товары в категории" : "То, что выбирают чаще всего"}
       </p>
 
       <ProductToolbar sort={sort} onSortChange={setSort} />
 
       {isLoading && (
         <div className={styles.productsGrid}>
-          {Array.from({ length: 10 }).map((_, i) => (
+          {Array.from({ length: PAGE_SIZE }).map((_, i) => (
             <ProductCardSkeleton key={i} />
           ))}
         </div>
@@ -43,12 +57,34 @@ function ProductsGrid({ categorie }) {
         </div>
       )}
 
-      {!isLoading && !isError && (
-        <div className={styles.productsGrid}>
-          {products.map((prod) => (
-            <ProductCard key={prod.id} product={prod} />
-          ))}
+      {!isLoading && !isError && products.length === 0 && (
+        <div className={styles.errorBox}>
+          <p>Товары не найдены</p>
         </div>
+      )}
+
+      {!isLoading && !isError && products.length > 0 && (
+        <>
+          <div
+            className={styles.productsGrid}
+            style={{
+              opacity: isFetching ? 0.5 : 1,
+              transition: "opacity 0.2s",
+            }}
+          >
+            {products.map((prod) => (
+              <ProductCard key={prod.id} product={prod} />
+            ))}
+          </div>
+
+          {pagination && (
+            <Pagination
+              page={pagination.page}
+              totalPages={pagination.totalPages}
+              onChange={setPage}
+            />
+          )}
+        </>
       )}
     </section>
   );
