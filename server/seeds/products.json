@@ -745,6 +745,51 @@
       "seller": "FashionLab",
       "category": "Популярное",
       "isPopular": true
+    },
+    {
+      "name": "Колесо 14R",
+      "price": 19899,
+      "image": "/productImage/WheelR14.png",
+      "rating": 4.7,
+      "seller": "AutoDiller",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Подписка на ClaudeCode",
+      "price": 2399,
+      "image": "/productImage/ClaudeCode.png",
+      "rating": 4.9,
+      "seller": "It-proger",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Подписка на GPT",
+      "price": 57959,
+      "image": "/productImage/GptAstra.png",
+      "rating": 4.5,
+      "seller": "It-proger",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Lexus is 250",
+      "price": 1400000,
+      "image": "/productImage/Lexus.png",
+      "rating": 4.8,
+      "seller": "AutoDiller",
+      "category": "Популярное",
+      "isPopular": true
+    },
+    {
+      "name": "Сникерс",
+      "price": 89,
+      "image": "/productImage/snickers.png",
+      "rating": 5.9,
+      "seller": "Sweets",
+      "category": "Популярное",
+      "isPopular": true
     }
   ]
 }

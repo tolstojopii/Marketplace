@@ -1,16 +1,19 @@
+import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import ProductCard from "../ProductCard/ProductCard";
+import ProductCardSkeleton from "../ProductCard/ProductCardSkeleton";
+import ProductToolbar from "../ProductToolbar/ProductToolbar";
 import styles from "./ProductGrid.module.css";
 
 function ProductsGrid({ categorie }) {
-  const filters = categorie
-    ? { category: categorie }
-    : { popular: true };
+  const [sort, setSort] = useState("default");
+
+  const filters = {
+    ...(categorie ? { category: categorie } : { popular: true }),
+    ...(sort !== "default" ? { sort } : {}),
+  };
 
   const { data: products = [], isLoading, isError, refetch } = useProducts(filters);
-
-  if (isLoading) return <div className={styles.loader}>Загрузка товаров...</div>;
-  if (isError) return <button onClick={refetch}>Ошибка, повторить</button>;
 
   return (
     <section className={styles.productsSection} id="products">
@@ -20,11 +23,33 @@ function ProductsGrid({ categorie }) {
       <p className={styles.sectionSubtitle}>
         {categorie ? 'Товары в категории' : 'То, что выбирают чаще всего'}
       </p>
-      <div className={styles.productsGrid}>
-        {products.map((prod) => (
-          <ProductCard key={prod.id} product={prod} />
-        ))}
-      </div>
+
+      <ProductToolbar sort={sort} onSortChange={setSort} />
+
+      {isLoading && (
+        <div className={styles.productsGrid}>
+          {Array.from({ length: 10 }).map((_, i) => (
+            <ProductCardSkeleton key={i} />
+          ))}
+        </div>
+      )}
+
+      {isError && (
+        <div className={styles.errorBox}>
+          <p>Не удалось загрузить товары</p>
+          <button onClick={() => refetch()} className={styles.retryBtn}>
+            Повторить
+          </button>
+        </div>
+      )}
+
+      {!isLoading && !isError && (
+        <div className={styles.productsGrid}>
+          {products.map((prod) => (
+            <ProductCard key={prod.id} product={prod} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

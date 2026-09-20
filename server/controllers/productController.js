@@ -2,7 +2,7 @@ const Product = require('../models/Product');
 
 exports.getProducts = async (req, res) => {
   try {
-    const { category, popular, search, page = 1, limit = 50 } = req.query;
+    const { category, sort, popular, search, page = 1, limit = 20 } = req.query;
     const offset = (Number(page) - 1) * Number(limit);
 
     const products = await Product.findAll({
@@ -11,6 +11,7 @@ exports.getProducts = async (req, res) => {
       search,
       limit: Number(limit),
       offset,
+      sort,
     });
 
     res.json({ success: true, data: { products } });

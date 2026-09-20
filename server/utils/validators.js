@@ -15,6 +15,9 @@ const validateRegistration = (data) => {
   if (!data.password || data.password.length < 6) {
     errors.push("пароль должен содержать минимум 6 символов");
   }
+  if (data.password.length > 128) {
+    errors.push("пароль не должен содержать более 128 символов");
+  }
   return errors;
 };
 
@@ -26,6 +29,9 @@ const validateLogin = (data) => {
   }
   if (!data.password || data.password.length < 1) {
     errors.push("пароль обязателен");
+  }
+  if (data.password.length > 128) {
+    errors.push("пароль не должен содержать более 128 символов");
   }
   return errors;
 };

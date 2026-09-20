@@ -21,6 +21,40 @@
   gap: 16px;
 }
 
+
+
+.errorBox {
+  padding: 60px 20px;
+  text-align: center;
+  background: #12121c;
+  border: 1px dashed #2a2a3a;
+  border-radius: 14px;
+  color: #8b9299;
+}
+
+.errorBox p {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #f0f0f5;
+}
+
+.retryBtn {
+  background: #4361ee;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.retryBtn:hover {
+  background: #3a56d4;
+}
+
 @media (max-width: 1200px) {
   .productsGrid {
     grid-template-columns: repeat(4, 1fr);
