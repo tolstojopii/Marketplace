@@ -44,6 +44,53 @@ exports.getProducts = async (req, res) => {
   }
 };
 
+exports.createProduct = async (req, res) => {
+  try {
+    const { name, price, image, rating, seller, category_id, is_popular } = req.body;
+
+    const errors = [];
+    if (!name || name.trim().length < 2) {
+      errors.push('Название должно содержать минимум 2 символа');
+    }
+    if (!Number.isInteger(price) || price < 0) {
+      errors.push('Цена должна быть целым неотрицательным числом');
+    }
+    if (!image || typeof image !== 'string') {
+      errors.push('Картинка обязательна');
+    }
+    if (!seller || seller.trim().length < 2) {
+      errors.push('Продавец обязателен');
+    }
+    if (rating !== undefined) {
+      if (typeof rating !== 'number' || rating < 0 || rating >= 5) {
+        errors.push('Рейтинг должен быть числом от 0 до 5');
+      }
+    }
+    if (!Number.isInteger(category_id) || category_id < 1) {
+      errors.push('Категория обязательна');
+    }
+
+    if (errors.length) {
+      return res.status(400).json({ success: false, errors });
+    }
+
+    const product = await Product.create({
+      name: name.trim(),
+      price,
+      image: image.trim(),
+      rating,
+      seller: seller.trim(),
+      category_id,
+      is_popular: Boolean(is_popular),
+    });
+
+    res.status(201).json({ success: true, data: { product } });
+  } catch (err) {
+    console.error('createProduct error', err);
+    res.status(500).json({ success: false, message: 'Ошибка сервера' });
+  }
+};
+
 exports.getProductById = async (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);

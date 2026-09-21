@@ -17,5 +17,10 @@ export const getProducts = async ({
   if (limit) params.limit = limit;
 
   const { data } = await apiClient.get('/products', { params });
-  return data.data; // { products, pagination }
+  return data.data; 
+};
+
+export const createProduct = async (productData) => {
+  const { data } = await apiClient.post('/products', productData);
+  return data.data.product;
 };

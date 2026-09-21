@@ -5,8 +5,8 @@ const { validateRegistration, validateLogin } = require("../utils/validators");
 
 const SALT_ROUNDS = 12
 
-const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: "7d" });
+const generateToken = (userId, role) => {
+  return jwt.sign({ id: userId, role}, process.env.JWT_SECRET, { expiresIn: "7d" });
 };
 
 exports.register = async (req, res) => {
@@ -33,7 +33,7 @@ exports.register = async (req, res) => {
 
     const user = await User.create(full_name, email, hashedPassword);
 
-    const token = generateToken(user.id);
+    const token = generateToken(user.id, user.role);
 
     return res.status(201).json({
       success: true,
@@ -83,7 +83,7 @@ exports.login = async (req, res) => {
         message: "Неверный email или пароль",
       });
     }
-    const token = generateToken(user.id);
+    const token = generateToken(user.id, user.role);
 
     return res.status(200).json({
       success: true,
@@ -93,6 +93,7 @@ exports.login = async (req, res) => {
           id: user.id,
           full_name: user.full_name,
           email: user.email,
+          role: user.role,
           created_at: user.created_at,
         },
         token,
@@ -124,6 +125,7 @@ exports.getMe = async (req, res) => {
           id: user.id,
           full_name: user.full_name,
           email: user.email,
+          role: user.role,
           created_at: user.created_at,
         },
       },
