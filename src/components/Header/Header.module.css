@@ -154,6 +154,21 @@
   background: #3a56d4;
 }
 
+.adminLink {
+  text-decoration: none;
+  color: #b265e6;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(178, 101, 230, 0.4);
+  transition: all 0.2s;
+}
+
+.adminLink:hover {
+  background: rgba(178, 101, 230, 0.15);
+}
+
 @keyframes pop {
   0% {
     transform: scale(0);

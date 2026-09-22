@@ -6,7 +6,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
-          <h3><Shop/> MarketPlace</h3>
+          <h3><Shop className={styles.icon}/> MarketPlace</h3>
           <p>Покупайте с удовольствием, продавайте с выгодой.</p>
         </div>
         <div className={styles.footerSection}>
@@ -23,8 +23,8 @@ function Footer() {
         </div>
         <div className={styles.footerSection}>
           <h4>Контакты</h4>
-          <p><Message/> support@marketplace.ru</p>
-          <p><Phone/> 8 (800) 555-35-35</p>
+          <p><Message className={styles.icon}/> support@marketplace.ru</p>
+          <p><Phone className={styles.icon} /> 8 (800) 555-35-35</p>
         </div>
       </div>
       <div className={styles.footerBottom}>

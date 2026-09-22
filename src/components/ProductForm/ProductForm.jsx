@@ -1,17 +1,23 @@
-import { useState } from 'react';
-import styles from './ProductForm.module.css';
+import { useState } from "react";
+import styles from "./ProductForm.module.css";
 
 const INITIAL = {
-  name: '',
-  price: '',
-  image: '',
+  name: "",
+  price: "",
+  image: "",
   rating: 5,
-  seller: '',
-  category_id: '',
+  seller: "",
+  category_id: "",
   is_popular: false,
 };
 
-function ProductForm({ initialValues, categories, onSubmit, isSubmitting, submitLabel = 'Сохранить' }) {
+function ProductForm({
+  initialValues,
+  categories,
+  onSubmit,
+  isSubmitting,
+  submitLabel = "сохранить",
+}) {
   const [values, setValues] = useState(initialValues || INITIAL);
   const [errors, setErrors] = useState({});
 
@@ -23,24 +29,24 @@ function ProductForm({ initialValues, categories, onSubmit, isSubmitting, submit
   const validate = () => {
     const next = {};
     if (!values.name || values.name.trim().length < 2) {
-      next.name = 'Минимум 2 символа';
+      next.name = "Минимум 2 символа";
     }
     const priceNum = Number(values.price);
     if (!Number.isInteger(priceNum) || priceNum < 0) {
-      next.price = 'Целое неотрицательное число';
+      next.price = "Целое неотрицательное число";
     }
     if (!values.image || !values.image.trim()) {
-      next.image = 'Укажите путь к картинке';
+      next.image = "Укажите путь к картинке";
     }
     if (!values.seller || values.seller.trim().length < 2) {
-      next.seller = 'Минимум 2 символа';
+      next.seller = "Минимум 2 символа";
     }
     if (!values.category_id) {
-      next.category_id = 'Выберите категорию';
+      next.category_id = "Выберите категорию";
     }
     const ratingNum = Number(values.rating);
     if (Number.isNaN(ratingNum) || ratingNum < 0 || ratingNum > 5) {
-      next.rating = 'От 0 до 5';
+      next.rating = "От 0 до 5";
     }
     setErrors(next);
     return Object.keys(next).length === 0;

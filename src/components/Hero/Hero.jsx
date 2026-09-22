@@ -1,5 +1,6 @@
 import styles from "./Hero.module.css";
 import { Speed, Lock, Package } from "../../assets/image";
+import FoldText from "../animation/FoldText";
 
 function Hero() {
   return (
@@ -7,14 +8,41 @@ function Hero() {
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
           <span className={styles.heroBadge}>Горячие предложения</span>
+          
           <h1>
-            Покупайте и продавайте
+            <FoldText
+              text={"Покупайте и продавайте"}
+              splitBy="word"          
+              fontSize={48}          
+              fontWeight={800}       
+              color="#ffffff"         
+              trigger="mount" 
+              lineHeight={1.2}        
+              stagger={0.1}          
+            />
             <br />
-            <span className={styles.highlight}>с комфортом</span>
+            <span><FoldText text={"с комфортом"}
+              splitBy="word"          
+              fontSize={48}          
+              fontWeight={800}       
+              color="#4361ee"         
+              trigger="mount" 
+              lineHeight={1.2}        
+              stagger={0.1}/></span>
           </h1>
           <p className={styles.heroDescription}>
-            Тысячи товаров от проверенных продавцов. Лучшие цены, быстрая
-            доставка и гарантия качества.
+            <FoldText
+              text={"Тысячи товаров от проверенных продавцов. Лучшие цены, быстрая доставка и гарантия качества."}
+            
+              splitBy="word"          
+              fontSize={18}           
+              color="#9da5ac"
+              fontWeight={500}         
+              trigger="mount"      
+              lineHeight={1.8}   
+              stagger={0.1}          
+            />
+        
           </p>
           <div className={styles.heroActions}>
             <button className={styles.btnPrimary}>Начать покупки</button>

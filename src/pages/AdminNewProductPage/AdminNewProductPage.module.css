@@ -1,0 +1,41 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.backBtn {
+  background: none;
+  border: 1px solid #2a2a3a;
+  color: #adb5bd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  color: #fff;
+  border-color: #4361ee;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f0f0f5;
+}
+
+.container {
+  padding: 40px;
+  text-align: center;
+  color: #adb5bd;
+}

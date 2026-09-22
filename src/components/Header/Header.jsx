@@ -6,7 +6,7 @@ import { useCartTotal } from "../../hooks/useUnifiedCart";
 
 function Header() {
   const { user, logout } = useAuthStore();
-  const {count: totalItems} = useCartTotal();
+  const { count: totalItems } = useCartTotal();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -45,6 +45,12 @@ function Header() {
               )}
             </button>
           </Link>
+
+          {user?.role === "admin" && (
+            <Link to="/admin/products" className={styles.adminLink}>
+              Админка
+            </Link>
+          )}
 
           {user ? (
             <>

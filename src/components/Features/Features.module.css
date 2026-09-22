@@ -20,7 +20,8 @@
 
 .featureIcon {
   font-size: 40px;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin-bottom: 16px;
 }
 
