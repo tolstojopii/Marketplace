@@ -177,6 +177,27 @@
   transition: background 0.3s;
 }
 
+.backBtn {
+  width: 100%;
+  background: transparent;
+  color: #4361ee;
+  border: 2px solid #4361ee;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background 0.3s;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.backBtn:hover{
+  background: #4361ee;
+  color: white;
+}
+
 .shopBtn:hover {
   background: #3a56d4;
 }

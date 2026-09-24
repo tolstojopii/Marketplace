@@ -42,7 +42,9 @@ function CartPage() {
 
   return (
     <div className={styles.cartPage}>
+      
       <h2 className={styles.title}>Корзина</h2>
+      
       <div className={styles.cartList}>
         {items.map((item) => (
           <div key={item.product_key} className={styles.cartItem}>
@@ -85,6 +87,9 @@ function CartPage() {
         </div>
         <button className={styles.checkoutBtn} onClick={handleCheckout}>
           Оформить заказ
+        </button>
+        <button className={styles.backBtn} onClick={() => navigate("/")}>
+          Перейти к покупкам
         </button>
       </div>
     </div>

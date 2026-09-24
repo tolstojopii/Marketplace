@@ -53,7 +53,7 @@ function AuthPage() {
         }
       }
     } catch (err) {
-      const msg = err.message || err.errors?.join(', ') || "Что-то пошло не так"
+      const msg = err.message || "Что-то пошло не так";
       setError(msg);
       toast.error(msg);
     } finally {
