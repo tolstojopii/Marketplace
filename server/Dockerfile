@@ -11,7 +11,7 @@ COPY package*.json ./
 # --omit=dev уберёт devDependencies (nodemon, jest и т.д.)
 # В разработке это не подходит, но для прода — идеально.
 # Для dev-режима мы будем использовать отдельную команду или override.
-RUN npm ci --omit=dev
+RUN npm ci 
 
 # Копируем весь остальной код
 COPY . .
@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 5000
 
 # Команда запуска
-CMD ["node", "server.js"]
+CMD ["sh", "-c", "npm run migrate:up && node server.js"]
