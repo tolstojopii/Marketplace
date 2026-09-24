@@ -11,13 +11,16 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const { apiLimiter, authLimiter } = require("./middleware/rateLimit");
 
 const app = express();
+app.set('trust proxy', 1);
 
 app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173'
 }));
 app.use(express.json({ limit: "100kb" }));
 app.use(express.urlencoded({ extended: true, limit: "100kb" }));
+
 
 app.use("/api", (req, res, next) => {
   res.set(

@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 5000
 
 # Команда запуска
-CMD ["sh", "-c", "npm run migrate:up && node server.js"]
+CMD ["sh", "-c", "npm run migrate:up && npm run seed && node server.js"]Ё
