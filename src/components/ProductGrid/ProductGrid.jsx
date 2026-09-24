@@ -28,7 +28,6 @@ function ProductsGrid({ categorie }) {
   const products = data?.products ?? [];
   const pagination = data?.pagination;
 
-  console.log("pagination", pagination);
   return (
     <section className={styles.productsSection} id="products">
       <h2 className={styles.sectionTitle}>

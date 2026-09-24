@@ -1,4 +1,4 @@
-// components/animation/Reveal.jsx
+
 import { useEffect, useRef, useState } from 'react';
 import styles from './Reveal.module.css';
 

@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 *.env
+*.sql
+!server/migrations/*.sql
 
 
 # Editor directories and files

@@ -31,7 +31,7 @@ function Header() {
         </div>
 
         <nav className={styles.nav}>
-          <a href="#categories">Категории</a>
+          <a href="#categoris">Категории</a>
           <a href="#products">Товары</a>
           <a href="#features">Преимущества</a>
         </nav>

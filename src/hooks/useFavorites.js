@@ -12,7 +12,7 @@ export const useFavoritesQuery = () => {
   });
 };
 
-// mutation получает ЯВНЫЙ action — 'add' | 'remove'
+
 export const useToggleFavorite = () => {
   const qc = useQueryClient();
   const user = useAuthStore((s) => s.user);

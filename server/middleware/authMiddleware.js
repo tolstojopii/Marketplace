@@ -15,7 +15,7 @@ const authMiddleware = async (req, res, next) => {
     req.userId = decoded.id;
     req.userRole = decoded.role;
     next();
-  } catch  {
+  } catch {
     return res.status(401).json({
       success: false,
       message: "недействительный токен",

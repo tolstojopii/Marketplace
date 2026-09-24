@@ -12,7 +12,7 @@
   gap: 24px;
 }
 
-/* -------- Сайдбар -------- */
+
 .sidebar {
   background: #1e1e2a;
   border-radius: 20px;
@@ -114,7 +114,7 @@
   background: rgba(230, 57, 70, 0.2);
 }
 
-/* -------- Контент -------- */
+
 .content {
   background: #1e1e2a;
   border-radius: 20px;
@@ -151,7 +151,7 @@
   margin-bottom: 28px;
 }
 
-/* -------- Инфо-карточки -------- */
+
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -186,7 +186,7 @@
   color: #4ade80;
 }
 
-/* -------- Статистика -------- */
+
 .statsRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -224,7 +224,7 @@
   color: #8b9299;
 }
 
-/* -------- Заказы -------- */
+
 .ordersList {
   display: flex;
   flex-direction: column;
@@ -297,7 +297,7 @@
   color: #fb923c;
 }
 
-/* -------- Пустой блок -------- */
+
 .emptyBox {
   padding: 60px 20px;
   text-align: center;
@@ -383,7 +383,7 @@
   color: #f0f0f5;
   font-size: 28px;
 }
-/* -------- Бейдж в меню -------- */
+
 .menuBadge {
   margin-left: auto;
   background: #e63946;
@@ -399,7 +399,7 @@
   padding: 0 6px;
 }
 
-/* -------- Список избранного -------- */
+
 .favoritesList {
   display: flex;
   flex-direction: column;

@@ -46,7 +46,7 @@ function Categories({ select, active }) {
             onClick={() => select(active)}
             aria-label="Сбросить фильтр категории"
           >
-            ✕ Сбросить
+             Сбросить
           </button>
         )}
       </div>

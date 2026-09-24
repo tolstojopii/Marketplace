@@ -62,7 +62,7 @@ exports.createProduct = async (req, res) => {
       errors.push('Продавец обязателен');
     }
     if (rating !== undefined) {
-      if (typeof rating !== 'number' || rating < 0 || rating >= 5) {
+      if (typeof rating !== 'number' || rating < 0 || rating > 5) {
         errors.push('Рейтинг должен быть числом от 0 до 5');
       }
     }

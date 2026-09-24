@@ -1,5 +1,7 @@
+
 const rateLimit = require('express-rate-limit')
-const skip = () => process.env.NODE_ENV === "test";
+const skip = () => process.env.NODE_ENV !== "production";
+
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -9,6 +11,8 @@ const apiLimiter = rateLimit({
   skip,
   message: {success: false, message: 'Слишкиом много запросов, попробуйте позже'}
 })
+
+
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,

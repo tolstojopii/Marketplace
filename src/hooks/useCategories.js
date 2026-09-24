@@ -5,6 +5,6 @@ export const useCategories = () => {
   return useQuery({
     queryKey: ['categories'],
     queryFn: getCategories,
-    staleTime: 10 * 60 * 1000, // 10 минут — категории меняются редко
+    staleTime: 10 * 60 * 1000, 
   });
 };

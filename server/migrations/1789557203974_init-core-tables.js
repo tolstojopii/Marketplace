@@ -9,7 +9,7 @@ export const shorthands = undefined;
  * @returns {Promise<void> | void}
  */
 export const up = (pgm) => {
-  // ---------- users ----------
+
   pgm.sql(`
     CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY,
@@ -21,8 +21,7 @@ export const up = (pgm) => {
     );
   `);
 
-  // Если таблица уже была и в ней колонка update_at — переименуем.
-  // Проверяем существование колонки динамически.
+
   pgm.sql(`
     DO $$
     BEGIN
@@ -38,14 +37,14 @@ export const up = (pgm) => {
     END $$;
   `);
 
-  // Приводим типы created_at/updated_at у users к timestamptz, если были timestamp
+  
   pgm.sql(`
     ALTER TABLE users
       ALTER COLUMN created_at TYPE TIMESTAMPTZ USING created_at AT TIME ZONE 'UTC',
       ALTER COLUMN updated_at TYPE TIMESTAMPTZ USING updated_at AT TIME ZONE 'UTC';
   `);
 
-  // UNIQUE на email — если ещё нет
+  
   pgm.sql(`
     DO $$
     BEGIN
@@ -57,7 +56,7 @@ export const up = (pgm) => {
     END $$;
   `);
 
-  // ---------- cart_items ----------
+  
   pgm.sql(`
     CREATE TABLE IF NOT EXISTS cart_items (
       id SERIAL PRIMARY KEY,
@@ -86,7 +85,7 @@ export const up = (pgm) => {
     `CREATE INDEX IF NOT EXISTS idx_cart_items_user_id ON cart_items(user_id);`,
   );
 
-  // ---------- favorites ----------
+
   pgm.sql(`
     CREATE TABLE IF NOT EXISTS favorites (
       id SERIAL PRIMARY KEY,
@@ -120,8 +119,7 @@ export const up = (pgm) => {
  * @returns {Promise<void> | void}
  */
 export const down = (pgm) => {
-  // Откат осторожный: дропаем только то, что точно создавали.
-  // Если боишься потерять данные — просто не вызывай migrate:down для этой миграции.
+ 
   pgm.sql(`DROP INDEX IF EXISTS idx_favorites_user_id;`);
   pgm.sql(`DROP INDEX IF EXISTS idx_cart_items_user_id;`);
   pgm.sql(
@@ -131,5 +129,5 @@ export const down = (pgm) => {
     `ALTER TABLE cart_items DROP CONSTRAINT IF EXISTS cart_items_user_product_unique;`,
   );
   pgm.sql(`ALTER TABLE users DROP CONSTRAINT IF EXISTS users_email_unique;`);
-  // Таблицы НЕ дропаем — данные дороже.
+
 };
