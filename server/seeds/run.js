@@ -38,7 +38,7 @@ async function seed() {
     categoryMap['Популярное'] = popRows[0].id;
 
     
-    await client.query('TRUNCATE products RESTART IDENTITY CASCADE');
+    
 
     for (const p of data.products) {
       await client.query(
